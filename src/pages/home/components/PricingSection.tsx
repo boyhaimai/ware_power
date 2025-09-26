@@ -79,35 +79,38 @@ export default function PricingSection() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Content - Pricing */}
-          <div className="bg-white rounded-3xl p-12 shadow-2xl">
+          <div className="bg-white rounded-3xl p-6 lg:p-12 shadow-2xl">
             <div className="text-center space-y-6">
               <div className="space-y-2">
-                <h3 className="text-3xl font-black text-gray-900">
+                <h3 className="text-2xl lg:text-3xl font-black text-gray-900">
                   ĐĂNG KÝ NGAY HÔM NAY
                 </h3>
-                <p className="text-lg text-red-600 font-bold">
+                <p className="text-base lg:text-lg text-blue-600 font-bold">
                   (NHẬN ƯU ĐÃI HẤP DẪN)
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="text-gray-400 line-through text-2xl font-bold">
-                  36.179.000đ
+                <div className="text-red-600 line-through text-xl lg:text-2xl font-bold">
+                  36.179.000đ VNĐ
                 </div>
-                <div className="text-6xl font-black text-green-600">
-                  4.868.000 đ
+
+                <div className="text-4xl lg:text-6xl font-black text-green-600">
+                  4.868.000
                 </div>
-                <div className="text-2xl font-bold text-green-600">VNĐ</div>
+                <span className="text-xl lg:text-2xl font-bold text-green-600">
+                  VNĐ
+                </span>
               </div>
 
-              <div className="bg-yellow-100 rounded-2xl p-6 space-y-4">
-                <div className="text-center mb-6">
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+              <div className="bg-yellow-100 rounded-2xl p-4 lg:p-6 space-y-4">
+                <div className="text-center mb-4 lg:mb-6">
+                  <h4 className="text-lg lg:text-2xl font-bold text-gray-800 mb-2">
                     Điền thông tin để nhận tư vấn
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-sm lg:text-base text-gray-600">
                     Chúng tôi sẽ liên hệ và hỗ trợ bạn ngay lập tức
                   </p>
                 </div>
@@ -128,7 +131,8 @@ export default function PricingSection() {
                   <form
                     onSubmit={handleSubmit}
                     data-readdy-form
-                    className="space-y-4"
+                    id="pricing_form"
+                    className="space-y-3 lg:space-y-4"
                   >
                     <input
                       type="text"
@@ -137,7 +141,7 @@ export default function PricingSection() {
                       onChange={handleChange}
                       placeholder="Họ tên *"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
+                      className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                     />
 
                     <input
@@ -147,7 +151,7 @@ export default function PricingSection() {
                       onChange={handleChange}
                       placeholder="Email *"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
+                      className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                     />
 
                     <input
@@ -157,7 +161,7 @@ export default function PricingSection() {
                       onChange={handleChange}
                       placeholder="Số điện thoại *"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
+                      className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                     />
 
                     <textarea
@@ -166,8 +170,8 @@ export default function PricingSection() {
                       onChange={handleChange}
                       placeholder="Ghi chú (tùy chọn)"
                       maxLength={500}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm resize-none"
+                      rows={2}
+                      className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm resize-none"
                     />
 
                     {submitStatus === "error" && (
@@ -181,7 +185,7 @@ export default function PricingSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap cursor-pointer"
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 lg:py-3 rounded-xl font-bold text-sm lg:text-base hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap cursor-pointer"
                     >
                       {isSubmitting ? "Đang gửi..." : "ĐĂNG KÝ NGAY"}
                     </button>
@@ -189,8 +193,8 @@ export default function PricingSection() {
                 )}
               </div>
 
-              <div className="bg-red-100 rounded-2xl p-4">
-                <p className="text-red-800 font-bold text-lg">
+              <div className="bg-red-100 rounded-2xl p-3 lg:p-4">
+                <p className="text-red-800 font-bold text-base lg:text-lg">
                   ⏰ Ưu đãi có hạn
                 </p>
               </div>
@@ -198,33 +202,40 @@ export default function PricingSection() {
           </div>
 
           {/* Right Content - Benefits */}
-          <div className="space-y-8 text-white">
-            <div className="space-y-6">
-              <h3 className="text-3xl font-bold">Những gì bạn nhận được:</h3>
+          <div className="space-y-6 lg:space-y-8 text-white">
+            <div className="space-y-4 lg:space-y-6">
+              <h3 className="text-2xl lg:text-3xl font-bold">
+                Những gì bạn nhận được:
+              </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3 lg:space-y-4">
                 {[
                   "20 khoá học đã quay sẵn chủ động học mọi lúc, mọi nơi trị giá 20 triệu đồng",
                   "Sách truyền nghề hướng nghiệp trị giá 999k",
                   "Sách Cẩm nang hướng nghiệp trị giá 180k.",
                   "5 Bài báo cáo Ứng dụng hướng nghiệp Wake Power làm cho 5 cháu trị giá 15 triệu đồng.",
                 ].map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center">
-                      <i className="ri-check-line text-white font-bold w-4 h-4 flex items-center justify-center"></i>
+                  <div
+                    key={index}
+                    className="flex items-center space-x-3 lg:space-x-4"
+                  >
+                    <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <i className="ri-check-line text-white font-bold w-3 h-3 lg:w-4 lg:h-4 flex items-center justify-center"></i>
                     </div>
-                    <p className="text-lg">{benefit}</p>
+                    <p className="text-sm lg:text-lg">{benefit}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6">
               <div className="text-center">
-                <h4 className="text-2xl font-bold mb-2">
+                <h4 className="text-lg lg:text-2xl font-bold mb-2">
                   Đảm bảo hoàn tiền 100%
                 </h4>
-                <p className="text-lg">Nếu không hài lòng trong 30 ngày đầu</p>
+                <p className="text-sm lg:text-lg">
+                  Nếu không hài lòng trong 30 ngày đầu
+                </p>
               </div>
             </div>
           </div>
@@ -235,7 +246,7 @@ export default function PricingSection() {
           {[
             { number: "5000+", label: "Học viên đã tham gia" },
             { number: "98%", label: "Tỷ lệ hài lòng" },
-            { number: "50M+", label: "Thu nhập trung bình/tháng" },
+            { number: "50M+", label: "Chứng chỉ công nhận" },
             { number: "24/7", label: "Hỗ trợ học viên" },
           ].map((stat, index) => (
             <div key={index} className="text-center text-white">

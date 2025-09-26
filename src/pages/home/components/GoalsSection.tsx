@@ -75,7 +75,7 @@ export default function GoalsSection() {
                   <img
                     src={goal.image}
                     alt={`Goal ${index + 1}`}
-                    className="w-full h-[400px] object-cover object-fill"
+                    className="w-full h-[310px] object-cover object-fill"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>                
                   

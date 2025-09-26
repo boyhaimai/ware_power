@@ -69,8 +69,8 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             <div className="relative max-w-md mx-auto">
               {/* Phone Frame */}
               <div className="bg-gradient-to-br from-cyan-400 to-blue-500 p-1 rounded-3xl shadow-2xl">
-                <div className="rounded-3xl p-6 min-h-[600px] relative overflow-hidden">
-                  <img src={s} alt="" />
+                 <div className="rounded-3xl p-6 relative overflow-hidden min-h-[440px] md:min-h-[600px]">
+                  <img src={s} alt="" className=" w-full h-full object-contain"/>
                 </div>
               </div>
             </div>

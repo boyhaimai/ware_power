@@ -15,7 +15,7 @@ export default function Header({ onRegisterClick }: HeaderProps) {
           {/* Logo */}
           <div className="flex items-center">
             <div 
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="text-[1.2rem] font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               style={{ fontFamily: "Pacifico, serif" }}
             >
               WAKE POWER
@@ -79,16 +79,7 @@ export default function Header({ onRegisterClick }: HeaderProps) {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Liên hệ
-              </a>
-              <button
-                onClick={() => {
-                  onRegisterClick();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer w-fit"
-              >
-                Sử dụng theme
-              </button>
+              </a>             
             </div>
           </div>
         )}

@@ -37,14 +37,9 @@ export default function SkillsSection({ onRegisterClick }: SkillsSectionProps) {
     },
     {
       title: "Chất lượng chuyên môn cao, miễn phí 100%",
-      description: "Đào tạo hoàn toàn miễn phí từ các Tiến sĩ, chuyên gia hàng đầu Việt Nam.",
-      image: "https://readdy.ai/api/search-image?query=successful%20affiliate%20marketing%20team%20celebrating%20growth%20and%20success%2C%20diverse%20group%20of%20people%20working%20together%2C%20teamwork%20and%20collaboration%20in%20digital%20business%2C%20professional%20team%20environment&width=300&height=200&seq=skill006&orientation=landscape"
-    },
-    {
-      title: "Được cộng đồng giáo viên ghi nhận",
-      description: "Nhận được nhiều tình cảm đặc biệt của giáo viên khi tham gia khoá đào tạo.",
+      description: "Đào tạo hoàn toàn miễn phí từ các Tiến sĩ, chuyên gia hàng đầu Việt Nam.Nhận được nhiều tình cảm đặc biệt của giáo viên khi tham gia khoá đào tạo.",
       image: `${img3}`
-    }
+    },
   ];
 
   return (
