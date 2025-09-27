@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from 'react';
 
+const urlForm = "https://crm.hocvienhuongnghiep.com/webhook/lead?campaign=740"
+
 interface RegistrationModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -8,10 +10,9 @@ interface RegistrationModalProps {
 
 export default function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
   const [formData, setFormData] = useState({
-    full_name: '',
+    name: '',
     email: '',
     phone: '',
-    note: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -31,7 +32,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.full_name || !formData.email || !formData.phone || !formData.note) {
+    if (!formData.name || !formData.email || !formData.phone) {
       alert('Vui lòng điền đầy đủ thông tin');
       return;
     }
@@ -40,7 +41,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('https://readdy.ai/api/form/d3aehicd3kseu31u9p20', {
+      const response = await fetch(urlForm, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -51,10 +52,9 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
-          full_name: '',
+          name: '',
           email: '',
-          phone: '',
-          note: ''
+          phone: '',          
         });
         setTimeout(() => {
           onClose();
@@ -115,8 +115,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <div>
                 <input
                   type="text"
-                  name="full_name"
-                  value={formData.full_name}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   placeholder="Họ tên *"
                   required
@@ -134,38 +134,19 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                 />
-              </div>
+              </div>  
 
               <div>
-                <select
+                <input
+                  type="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  placeholder="Số điện thoại *"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all pr-8 text-sm appearance-none bg-white"
-                  style={{ backgroundImage: "url('data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>')", backgroundRepeat: "no-repeat", backgroundPosition: "right 0.7rem center", backgroundSize: "16px" }}
-                >
-                  <option value="">Giới tính *</option>
-                  <option value="Nam">Nam</option>
-                  <option value="Nữ">Nữ</option>
-                </select>
-              </div>
-
-              <div>
-                <select
-                  name="note"
-                  value={formData.note}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all pr-8 text-sm appearance-none bg-white"
-                  style={{ backgroundImage: "url('data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>')", backgroundRepeat: "no-repeat", backgroundPosition: "right 0.7rem center", backgroundSize: "16px" }}
-                >
-                  <option value="">Khu vực *</option>
-                  <option value="Bắc">Bắc</option>
-                  <option value="Trung">Trung</option>
-                  <option value="Nam">Nam</option>
-                </select>
-              </div>
+                  className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
+                />
+              </div>                            
 
               {submitStatus === 'error' && (
                 <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
