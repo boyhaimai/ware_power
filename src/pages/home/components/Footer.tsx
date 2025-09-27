@@ -102,22 +102,27 @@ export default function Footer() {
                   {
                     icon: "ri-facebook-fill",
                     color: "from-blue-600 to-blue-800",
+                    link: "https://www.facebook.com/diengiadaongoccuong?rdid=itg3j9IUEnc3V35g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F172c29bLHB%2F#",
                   },
-                  { icon: "ri-youtube-fill", color: "from-red-600 to-red-800" },
-                  { icon: "ri-tiktok-fill", color: "from-gray-800 to-black" },
+                  { icon: "ri-youtube-fill", color: "from-red-600 to-red-800" , link:" "},
+                  { icon: "ri-tiktok-fill", color: "from-gray-800 to-black", link: " " },
                   {
                     icon: "ri-instagram-fill",
                     color: "from-pink-600 to-purple-600",
+                    link: " ",
                   },
                 ].map((social, index) => (
-                  <button
+                  <a
                     key={index}
-                    className={`min-w-[3rem] min-h-[3rem]  bg-gradient-to-r ${social.color} rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer`}
+                    href={social.link} // <-- truyền link tương ứng vào object social
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`min-w-[3rem] min-h-[3rem] bg-gradient-to-r ${social.color} rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer`}
                   >
                     <i
                       className={`${social.icon} text-white text-xl w-5 h-5 flex items-center justify-center`}
                     ></i>
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -168,7 +173,7 @@ export default function Footer() {
               >
                 Chính sách bảo mật
               </a>
-              <span                
+              <span
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 transition-colors cursor-pointer"
               >

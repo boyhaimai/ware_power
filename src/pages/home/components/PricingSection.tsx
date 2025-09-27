@@ -1,11 +1,12 @@
 import { useState } from "react";
 
+const urlForm = "https://crm.hocvienhuongnghiep.com/webhook/lead?campaign=740";
+
 export default function PricingSection() {
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
     phone: "",
-    note: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -24,31 +25,31 @@ export default function PricingSection() {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch(
-        "https://readdy.ai/api/form/d3alcd7hm68tmmd6sbi0",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams(formData).toString(),
-        }
-      );
+      const response = await fetch(urlForm, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setSubmitStatus("success");
         setFormData({
           full_name: "",
           email: "",
           phone: "",
-          note: "",
         });
       } else {
         setSubmitStatus("error");
+        alert(data.message || "Có lỗi xảy ra, vui lòng thử lại!");
       }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      alert("Có lỗi xảy ra khi gửi form!");
     } finally {
       setIsSubmitting(false);
     }
@@ -162,16 +163,6 @@ export default function PricingSection() {
                       placeholder="Số điện thoại *"
                       required
                       className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
-                    />
-
-                    <textarea
-                      name="note"
-                      value={formData.note}
-                      onChange={handleChange}
-                      placeholder="Ghi chú (tùy chọn)"
-                      maxLength={500}
-                      rows={2}
-                      className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm resize-none"
                     />
 
                     {submitStatus === "error" && (
