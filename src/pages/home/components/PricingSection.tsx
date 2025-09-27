@@ -4,7 +4,7 @@ const urlForm = "https://crm.hocvienhuongnghiep.com/webhook/lead?campaign=740";
 
 export default function PricingSection() {
   const [formData, setFormData] = useState({
-    full_name: "",
+    name: "",
     email: "",
     phone: "",
   });
@@ -16,7 +16,7 @@ export default function PricingSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.full_name || !formData.email || !formData.phone) {
+    if (!formData.name || !formData.email || !formData.phone) {
       alert("Vui lòng điền đầy đủ thông tin bắt buộc");
       return;
     }
@@ -38,7 +38,7 @@ export default function PricingSection() {
       if (data.success) {
         setSubmitStatus("success");
         setFormData({
-          full_name: "",
+          name: "",
           email: "",
           phone: "",
         });
@@ -137,8 +137,8 @@ export default function PricingSection() {
                   >
                     <input
                       type="text"
-                      name="full_name"
-                      value={formData.full_name}
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       placeholder="Họ tên *"
                       required
