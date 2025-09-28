@@ -104,13 +104,17 @@ export default function Footer() {
                     color: "from-blue-600 to-blue-800",
                     link: "https://www.facebook.com/diengiadaongoccuong?rdid=itg3j9IUEnc3V35g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F172c29bLHB%2F#",
                   },
-                  { icon: "ri-youtube-fill", color: "from-red-600 to-red-800" , link:" "},
-                  { icon: "ri-tiktok-fill", color: "from-gray-800 to-black", link: " " },
                   {
-                    icon: "ri-instagram-fill",
-                    color: "from-pink-600 to-purple-600",
-                    link: " ",
+                    icon: "ri-youtube-fill",
+                    color: "from-red-600 to-red-800",
+                    link: "https://youtube.com/channel/UCfFDOpAX4LNEsakH0n7fsQA/Di%E1%BB%85nGi%E1%BA%A3%C4%90%C3%A0oNg%E1%BB%8DcC%C6%B0%E1%BB%9Dng?si=e4S8SFOHaSx_wm0i",
                   },
+                  // { icon: "ri-tiktok-fill", color: "from-gray-800 to-black", link: " " },
+                  // {
+                  //   icon: "ri-instagram-fill",
+                  //   color: "from-pink-600 to-purple-600",
+                  //   link: " ",
+                  // },
                 ].map((social, index) => (
                   <a
                     key={index}
