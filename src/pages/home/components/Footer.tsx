@@ -72,7 +72,7 @@ export default function Footer() {
                       Hotline:
                     </p>
                     <p className="text-white font-semibold text-sm md:text-base">
-                      0912 136 158 – 0984 686 616
+                      0984 686 616
                     </p>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import img2 from "@/asset/Images/z7014044091906_5f46fad5295f5586be79528f7a50ecad
 import img3 from "@/asset/Images/DSC07373.jpg"
 import img4 from "@/asset/Images/G.jpg"
 import img5 from "@/asset/Images/DSC00066.jpg"
+import img6 from "@/asset/Images/z7061983810057_a80b7a95ef882103b5c274b5288b1576.jpg"
 
 interface SkillsSectionProps {
   onRegisterClick: () => void;
@@ -33,7 +34,7 @@ export default function SkillsSection({ onRegisterClick }: SkillsSectionProps) {
     {
       title: "Tác động lan tỏa sâu rộng",
       description: "Với mong muốn truyền cho giáo viên – những người có ảnh hưởng trực tiếp đến nhiều thế hệ học sinh.",
-      image: "https://readdy.ai/api/search-image?query=large%20community%20of%20diverse%20people%20connected%20through%20social%20media%2C%20network%20of%20followers%20and%20fans%2C%20digital%20community%20building%20visualization%2C%20modern%20social%20networking%20concept&width=300&height=200&seq=skill005&orientation=landscape"
+      image: `${img6}`
     },
     {
       title: "Chất lượng chuyên môn cao, miễn phí 100%",

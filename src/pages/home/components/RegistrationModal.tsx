@@ -110,7 +110,7 @@ export default function RegistrationModal({
             </button>
           </div>
           <p className="text-red-600 font-semibold mt-2">
-            Còn 10 suất đăng ký cuối cùng. Chỗ ngồi có hạn. Ưu tiên giữ chỗ sớm!
+            Còn 10 suất đăng ký cuối cùng. Ưu tiên đăng ký sớm!
           </p>
         </div>
 

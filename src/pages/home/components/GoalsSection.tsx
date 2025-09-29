@@ -38,7 +38,7 @@ export default function GoalsSection() {
             Mục tiêu
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 ">
             BÌNH DÂN HỌC VỤ HƯỚNG NGHIỆP DÀNH CHO CỘNG ĐỒNG.
           </h2>
           <p className="text-2xl text-green-600 font-bold">
