@@ -87,7 +87,7 @@ export default function Footer() {
                       Website:
                     </p>
                     <p className="text-white font-semibold text-sm md:text-base">
-                      Hocvienhuongngiep.com
+                      Hocvienhuongnghiep.com
                     </p>
                   </div>
                 </div>
